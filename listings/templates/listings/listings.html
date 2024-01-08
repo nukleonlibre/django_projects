@@ -1,0 +1,14 @@
+{% extends 'listings/base.html' %}
+{% block content %}
+
+<h1>Hello Django !</h1>
+<h2>Les {{ listings|length }} articles du moment :</p>
+<p>
+    <ul>
+        {% for listing in listings %}
+        <li>{{ listing.title }}</li>
+        {% endfor %}
+    </ul>
+</p>
+
+{% endblock %}
