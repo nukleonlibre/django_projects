@@ -2,6 +2,7 @@ from django.db import models
 from django.core.validators import MaxValueValidator, MinValueValidator
 
 
+
 class Band(models.Model):
     class Genre(models.TextChoices):
         HIP_HOP = 'HH'
@@ -35,6 +36,7 @@ class Listing(models.Model):
     year = models.fields.IntegerField()
     types = models.fields.CharField(choices=Type.choices, max_length=5)
     band = models.ForeignKey(Band, null=True, on_delete=models.SET_NULL)
+    
     def __str__(self):
         return self.title
     
